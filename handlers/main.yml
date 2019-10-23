@@ -1,0 +1,5 @@
+- name: "start node"
+  systemd:
+    name: "node"
+    state: started
+  become: true

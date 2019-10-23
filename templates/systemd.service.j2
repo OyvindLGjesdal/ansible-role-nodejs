@@ -1,0 +1,14 @@
+[Unit]
+Description={{ nodejs_systemd_description | default ('ansible created node systemd job') }}
+Documentation= {{ nodejs_systemd_doc | default('') }}
+After={{ nodejs_systemd_after | default('network.target') }}
+
+[Service]
+Environment=NODE_PORT={{ nodejs_systemd_port }}
+Type=simple
+User={{nodejs_systemd_user | default( nodejs_install_npm_user) }} 
+ExecStart=/usr/bin/node {{ nodejs_systemd_start }}
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

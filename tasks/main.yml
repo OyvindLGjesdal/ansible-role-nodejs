@@ -40,3 +40,7 @@
   npm:
     path: "{{ nodejs_package_json_path }}"
   when: nodejs_package_json_path is defined and nodejs_package_json_path
+
+- name: "tasks for systemd"
+  import_tasks: "node-systemd.yml" 
+  when: "nodejs_systemd_start is defined"   
