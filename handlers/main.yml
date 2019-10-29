@@ -3,3 +3,9 @@
     name: "node"
     state: started
   become: true
+
+- name: "restart node"
+  systemd:
+    name: "node"
+    state: "restarted"
+  become: true
