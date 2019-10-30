@@ -7,7 +7,7 @@ After={{ nodejs_systemd_after | default('network.target') }}
 Environment=NODE_PORT={{ nodejs_systemd_port }}
 Type=simple
 User={{nodejs_systemd_user | default( nodejs_install_npm_user) }} 
-ExecStart=/usr/bin/node {{ nodejs_systemd_start }}
+ExecStart={{ nodejs_systemd_start }}
 Restart=on-failure
 
 [Install]
