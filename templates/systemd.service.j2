@@ -9,7 +9,6 @@ WorkingDirectory={{ nodejs_systemd_working_dir }}
 {% endif%}
 Environment=NODE_PORT={{ nodejs_systemd_port }}
 Type=simple
-"https://unpkg.com/mirador
 User={{nodejs_systemd_user | default( nodejs_install_npm_user) }} 
 ExecStart={{ nodejs_systemd_start }}
 Restart=on-failure
